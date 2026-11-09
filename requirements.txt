@@ -1,0 +1,36 @@
+# ============================================================
+# Incident Memory Agent — Python Dependencies
+# Python 3.14.7 on Windows (verified compatible)
+# ============================================================
+
+# --- UI ---
+streamlit>=1.42.0
+
+# --- Gemini AI (embedding + text generation) ---
+# google-genai is the NEW official SDK replacing the deprecated google-generativeai.
+# Import: `import google.genai as genai`  (was: import google.generativeai as genai)
+google-genai>=1.0.0
+
+# --- Supabase (table CRUD, RPC calls via REST) ---
+supabase>=2.10.0
+
+# --- PostgreSQL driver for direct pgvector SQL queries ---
+# psycopg[binary] = Psycopg 3 with pre-built C extension (no compilation needed)
+# Replaces psycopg2-binary which has NO wheel for Python 3.14 on Windows.
+# Confirmed: psycopg_binary-3.3.8-cp314-cp314-win_amd64.whl exists on PyPI.
+psycopg[binary]>=3.2.0
+
+# --- pgvector Python adapter (Vector type, register_vector for psycopg3) ---
+pgvector>=0.3.6
+
+# --- Data validation and type safety ---
+pydantic>=2.10.6
+
+# --- Load .env secrets into environment variables ---
+python-dotenv>=1.0.1
+
+# --- DataFrame operations for the history dashboard ---
+pandas>=2.2.3
+
+# --- Unit testing ---
+pytest>=8.3.4
